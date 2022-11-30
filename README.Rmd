@@ -1,0 +1,70 @@
+---
+title: Impact of Education and Income on Hate Crime Prevalence
+author: Aayra Aamer and Vanessa Wang (Undergraduates at Emory University)
+output: github_document
+date: "`r Sys.Date()`"
+editor_options:
+  chunk_output_type: console
+---
+
+<!-- Short Description  -->
+This project explores the overall distribution of hate crimes in the US utilizing the FBI's Hate Crime dataset. We further study the impact of education and income on hate crimes, by combining the Census Burreau's population survey pertaining to state level education (high school or higher) and median income from 2006-2020.
+
+*Updated on `r Sys.time()`*
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+
+library(rmarkdown)
+
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  out.width = "100%"
+)
+```
+
+
+## Table of contents
+
+  * [Methods](#Methods)
+  * [Platforms](#platforms-used)
+  * [Project Details](#detailed-project-description)
+  * [Getting Started Using the Repo](#repo-breakdown)
+  * [Contact Information](#contact-info)
+       
+        
+
+
+
+
+## [Methods]{#Methods}
+
+We utlized a combination of scatterplots and regressions to explore our research question. As the Hate Crime Statistics was dataset that mostly included categorical variables, we studied the distribution through looking at the range of varaibles, as well as the mode. It was benefical to look at the mode, as it allowed us to see which state had the highest crime, what the most common crime was, as well as which group was victimized the most. 
+
+We also utilized heat maps to see what the overall distribution of hate crime was geographically. This allowed us to see that throughout time certain states had much higher hate crime prevalence than others, and thus we decided that looking at state-level varaibles from the Census Burreau such as income and education could potentially explain some of crime prevalence. We then carried out a regression that looked at the relationship high school graduate or higher (as % of state population) and median income had with hate crime prevalence. We carried out a similar regression that looked at the relationship bachelor's degree or higher (as % of state population) and median income had with hate crime prevalence. However, as we looked at the scatter plots of all the variables with hate crime prevalence, we decided to drop the latter regression from our final output as the bachelor's degree variable had little variation and was not linear in hate crime prevalence. 
+
+## [Platforms]{#platforms-used}
+
+Our analysis was carried out exclusively in R and we utilized packages within R. We mostly stuck with installable packages such as tidyverse, plotly, and KableExtra and did not create any custom functions, however there was some utilization of base R.
+
+## [Project Details]{#detailed-project-description}
+
+Our study began by exploring the FBI's Hate Crime Statistics from 1991-2020. We saw varying prevalence of hate crimes both geographically and chronologically. We saw that the distribution was dispropotionately heavy in certain states throughout time. The aggregated cases for all the years further highlighted the same trend of hate crimes being more prevalent in certain states. Thus, we decided to consider whether there were measurable, state-level variables that could explain this different. We thus combined the Census Burreau's statistics for state-level education at a high school level, which reported what percentage of a state's population is a high school graduate or higher, as well as the median income for each state with a cleaned up version of the hate crime statistics. We then, look at the distributions of the variables, as well whether the relationship between median income and hate crime prevalence and high school graduation rate (as % of population) and hate crime prevalence. While the impact of median income, was that on average a 100k increase in income resulted in 100 more hate crimes, a higher level of education worked to decrease hate crimes such that for every 1% increase in the percentage of the population recieving a high school diploma (or higher), there were 34 less incidents of hate crimes. 
+
+However, the scatterplots we created suggested a highly non-linear relationship between income and hate crime. Further there was little variation in median income. Thus, the linear regression we performed may not perfectly fit this relationship. We also considered a model that looked at bachelor's education similar to the high school education varaible that we included. However, we decided to drop the bachelor's education variable in our final regression, as the variation between its various data points was highly limited and made it challenging to draw meaningful inferences.
+
+In the future, we would be interested in considering these relationships particularly in year's of high hate crime corresponding to certain biases. We believe it would be a good idea to situate in years with movements that may potentially show a rise in hate crimes. We would like to also consider how hate crime prevalence is impacted by the distance from the epicenter of an event. For instance, if on a city-level a law beniffting a marginalized group is introduced, does it firstly lead to increase in hate crime and does this increase gets subsequently smaller as we look farther and farther from that city. 
+
+
+## [Getting Started Using the Repo]{#repo-breakdown}
+
+* Clone this repo (for help see this [tutorial](https://help.github.com/articles/cloning-a-repository/))
+* Raw Data is being kept [here] (website_URL for folder called DATA)
+* Data transformation can be followed through the script [here] (website_URL for folder called Analysis)
+* For any issues, please refer to the authors' contact information below
+
+
+
+## [Contact Information]{#contact-info}
+Created by Aayra Aamer and Vanessa Wang who are can be contacted on aayra.aamer@emory.edu and vanessa.wang@emory.edu
